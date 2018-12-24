@@ -15,5 +15,17 @@ export const LANG_ES_TRANS = {
     'CONTACTS_NO_FOUND': 'Contacts no found',
     'NAME': 'Name',
     'PHONE_NUMBER': 'Phone Number',
-    'REFRESH': 'Refresh'
+    'REFRESH': 'Refresh',
+    'TYPE': 'Type',
+    'DATE': 'Date',
+    'CONTACT': 'Contact',
+    'CLOSE': 'Close',
+    'CALL': 'Call',
+    'SMS': 'sms',
+    'DIRECTION': 'Direction',
+    'INCOMING': 'Incoming',
+    'OUTGOING': 'Outgoing',
+    'ACTION': 'Action',
+    'VIEW': 'View',
+    'DURATION': 'Duration'
 };

@@ -39,16 +39,21 @@
                                 <th scope="col"><i class="fa fa-exchange" aria-hidden="true"></i></th>
                                 <th scope="col">{{'TYPE' |translate}}</th>
                                 <th scope="col">{{'DATE' |translate}}</th>
+                                <th scope="col">{{'ACTION' |translate}}</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr *ngFor="let communication of contactView.communications"
-                                (click)="onCommunicationClick(communication)">
-                                <td><i class="fa " [class.fa-hand-o-left]="communication.incoming" [class.fa-hand-o-right]="!communication.incoming" aria-hidden="true"></i></td>
+                                (click)="onCommunicationClick(communication,contactView)">
+                                <td><i class="fa " [class.fa-hand-o-left]="communication.incoming"
+                                       [class.fa-hand-o-right]="!communication.incoming" aria-hidden="true"></i></td>
                                 <td><i class="fa" [class.fa-comment]="!isCallCommunication(communication)"
                                        [class.fa-phone]="isCallCommunication(communication)" aria-hidden="true"></i>
                                 </td>
                                 <td>{{communication.date}}</td>
+                                <td>
+                                    <button class="btn btn-primary"  (click)="onCommunicationClick(communication,contactView)">{{'VIEW' | translate}} </button>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -58,5 +63,5 @@
         </div>
     </div>
 </div>
-
+<app-communication-detail></app-communication-detail>
 <app-message></app-message>

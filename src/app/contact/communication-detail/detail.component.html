@@ -1,0 +1,49 @@
+<div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 *ngIf="contact" class="modal-title"><strong>{{contact.name}}</strong>
+                    {{'CONTACT' | translate}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="communication" class="card-body">
+                    <div *ngIf="contact" class="row">
+                        <div class="col-5">
+                            <div class="field-label"><strong>{{'PHONE_NUMBER' | translate}}</strong>:</div>
+                            <div class="field">{{contact.phoneNumber}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="field-label"><strong>{{'TYPE' | translate}}</strong>:</div>
+                            <div *ngIf="isCallCommunication()" class="field">{{'CALL' | translate|uppercase}}</div>
+                            <div *ngIf="!isCallCommunication()" class="field">{{'SMS' | translate|uppercase}}</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="field-label"><strong>{{'DIRECTION' | translate}}</strong>:</div>
+                            <div *ngIf="communication.incoming" class="field">{{'INCOMING' | translate|uppercase}}</div>
+                            <div *ngIf="!communication.incoming"
+                                 class="field">{{'OUTGOING' | translate|uppercase}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="field-label"><strong>{{'DATE' | translate}}</strong>:</div>
+                            <div class="field">{{communication.date}}</div>
+                        </div>
+                        <div *ngIf="isCallCommunication()" class="col-5">
+                            <div class="field-label"><strong>{{'DURATION' | translate}}</strong>:</div>
+                            <div class="field">{{communication.duration}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'CLOSE' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

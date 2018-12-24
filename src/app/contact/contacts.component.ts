@@ -9,6 +9,7 @@ import {IContactView} from './i-contact-view';
 import {CALL_TYPE, ICommunication} from '../service/model/i-communication';
 import {CommunicationService} from '../service/communication/communication.service';
 import {ICommunicationResponse} from '../service/communication/i-communication-response';
+import {CommunicationDetailComponent} from './communication-detail/detail.component';
 
 @Component({
     selector: 'app-contacts',
@@ -24,6 +25,7 @@ export class ContactsComponent implements OnInit {
 
     @ViewChild(LoadingComponent) private _loadingComponent: LoadingComponent;
     @ViewChild(MessageComponent) private _messageComponent: MessageComponent;
+    @ViewChild(CommunicationDetailComponent) private _contactDetailComponent: CommunicationDetailComponent;
 
     constructor(private contactService: ContactService, private communicationService: CommunicationService, private translate: TranslateService) {
         this._contacts = [];
@@ -50,6 +52,10 @@ export class ContactsComponent implements OnInit {
         return this._messageComponent;
     }
 
+    get contactDetailComponent(): CommunicationDetailComponent {
+        return this._contactDetailComponent;
+    }
+
     set isLoading(value: boolean) {
         this._isLoading = value;
     }
@@ -70,12 +76,8 @@ export class ContactsComponent implements OnInit {
         this.loadCommunicationsContact(contactView);
     }
 
-    public onCommunicationClick(communication: ICommunication): void {
-        /*if (approvePromotion.isLoaded) {
-            return;
-        }
-        this.loadApprovePromotion(approvePromotion);*/
-        console.log(communication);
+    public onCommunicationClick(communication: ICommunication, contactView: IContactView): void {
+        this.contactDetailComponent.show(communication, contactView.contact);
     }
 
     public isCallCommunication(communication: ICommunication): boolean {

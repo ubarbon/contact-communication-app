@@ -17,5 +17,15 @@ export const LANG_EN_TRANS = {
     'PHONE_NUMBER': 'Phone Number',
     'REFRESH': 'Refresh',
     'TYPE': 'Type',
-    'DATE': 'Date'
+    'DATE': 'Date',
+    'CONTACT': 'Contact',
+    'CLOSE': 'Close',
+    'CALL': 'Call',
+    'SMS': 'sms',
+    'DIRECTION': 'Direction',
+    'INCOMING': 'Incoming',
+    'OUTGOING': 'Outgoing',
+    'ACTION': 'Action',
+    'VIEW': 'View',
+    'DURATION': 'Duration'
 };

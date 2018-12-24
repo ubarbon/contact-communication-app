@@ -19,6 +19,7 @@ import {FooterComponent} from './footer/footer.component';
 import {ContactsComponent} from './contact/contacts.component';
 import {ContactService} from './service/contact/contact.service';
 import {CommunicationService} from './service/communication/communication.service';
+import {CommunicationDetailComponent} from './contact/communication-detail/detail.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import {CommunicationService} from './service/communication/communication.servic
         MessageComponent,
         FooterComponent,
         DashboardComponent,
-        ContactsComponent
+        ContactsComponent,
+        CommunicationDetailComponent
     ],
     imports: [
         BrowserModule,
