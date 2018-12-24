@@ -13,7 +13,7 @@ export class ContactService {
     ) {
     }
 
-    public getContacts<T>(page: number = 1, total: number = 10): Observable<T> {
+    public getContacts<T>(page: number = 1, total: number = 25): Observable<T> {
         const endpoint = GET_CONTACTS.replace('{page}', '' + page).replace('{total}', '' + total);
 
         return this.http.get<T>(environment.host + endpoint);

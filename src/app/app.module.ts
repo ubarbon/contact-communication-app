@@ -18,6 +18,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {FooterComponent} from './footer/footer.component';
 import {ContactsComponent} from './contact/contacts.component';
 import {ContactService} from './service/contact/contact.service';
+import {CommunicationService} from './service/communication/communication.service';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,8 @@ import {ContactService} from './service/contact/contact.service';
         },
         TRANSLATION_PROVIDERS,
         TranslateService,
-        ContactService
+        ContactService,
+        CommunicationService
     ],
     bootstrap: [AppComponent]
 })
