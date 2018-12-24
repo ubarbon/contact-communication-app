@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  host: 'http://localhost:8000',
+  clientId: '1_random',
+  clientSecret: 'secret'
 };

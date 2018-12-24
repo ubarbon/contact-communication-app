@@ -1,16 +1,46 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app.routing';
+import {TranslateService} from './service/translate/translation.service';
+import {TRANSLATION_PROVIDERS} from './service/translate/translation';
+import {AuthenticationService} from './service/authentication/authentication.service';
+import {AuthGuardService} from './service/authentication/auth-guard.service';
+import {AppInterceptor} from './app.interceptor';
+import {LoginComponent} from './access/login.component';
+import {TranslatePipe} from './service/translate/translation.pipe';
+import {LoadingComponent} from './common/loading/loading.component';
+import {MessageComponent} from './common/message/message.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        TranslatePipe,
+        AppComponent,
+        LoginComponent,
+        LoadingComponent,
+        MessageComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        AppRoutingModule
+    ],
+    providers: [
+        AuthGuardService,
+        AuthenticationService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AppInterceptor,
+            multi: true
+        },
+        TRANSLATION_PROVIDERS,
+        TranslateService,
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  host: 'http://localhost:8000/app_dev.php',
+  clientId: '1_random',
+  clientSecret: 'secret'
 };
 
 /*

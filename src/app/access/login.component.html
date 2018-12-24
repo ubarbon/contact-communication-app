@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center">{{'ACCESS' | translate}}</h1>
+  <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+    <div class="form-group">
+      <input type="email" id="inputEmail" class="form-control" placeholder="{{'USERNAME' | translate}}" required autofocus [formControl]="loginForm.controls['username']">
+      <div *ngIf="loginForm.controls['username'].hasError('required')" class="alert alert-danger">
+        {{'USERNAME_IS_REQUIRED' | translate}}
+      </div>
+      <div *ngIf="loginForm.controls['username'].hasError('pattern')" class="alert alert-danger">
+        {{'USERNAME_IS_NOT_VALID' | translate}}
+      </div>
+      <input type="password" id="inputPassword" class="form-control" placeholder="{{'PASSWORD' | translate}}" required [formControl]="loginForm.controls['password']">
+      <div *ngIf="loginForm.controls['password'].hasError('required')" class="alert alert-danger">
+        {{'PASSWORD_IS_REQUIRED' | translate}}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!loginForm.valid">{{'LOGIN' | translate}}
+    </button>
+
+  </form>
+  <div *ngIf="badCredentials" class="alert alert-danger">{{'BAD_CREDENTIALS' | translate}}</div>
+</div>
+<app-message></app-message>
