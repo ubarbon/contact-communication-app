@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*TODO, Modal-Bug prevent the screen from freezing*/
+body div.modal-backdrop {
+    display: none;
+}
