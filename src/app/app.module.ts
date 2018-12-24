@@ -14,6 +14,10 @@ import {LoginComponent} from './access/login.component';
 import {TranslatePipe} from './service/translate/translation.pipe';
 import {LoadingComponent} from './common/loading/loading.component';
 import {MessageComponent} from './common/message/message.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {FooterComponent} from './footer/footer.component';
+import {ContactsComponent} from './contact/contacts.component';
+import {ContactService} from './service/contact/contact.service';
 
 @NgModule({
     declarations: [
@@ -21,7 +25,10 @@ import {MessageComponent} from './common/message/message.component';
         AppComponent,
         LoginComponent,
         LoadingComponent,
-        MessageComponent
+        MessageComponent,
+        FooterComponent,
+        DashboardComponent,
+        ContactsComponent
     ],
     imports: [
         BrowserModule,
@@ -39,6 +46,7 @@ import {MessageComponent} from './common/message/message.component';
         },
         TRANSLATION_PROVIDERS,
         TranslateService,
+        ContactService
     ],
     bootstrap: [AppComponent]
 })

@@ -10,5 +10,10 @@ export const LANG_ES_TRANS = {
     'USERNAME_IS_NOT_VALID': 'Username is not valid, valid format put phone number E.g. XXXXXXXXX',
     'PASSWORD': 'Password',
     'PASSWORD_IS_REQUIRED': 'Password is required',
-    'BAD_CREDENTIALS': 'Bad credentials'
+    'BAD_CREDENTIALS': 'Bad credentials',
+    'CONTACTS': 'Contacts',
+    'CONTACTS_NO_FOUND': 'Contacts no found',
+    'NAME': 'Name',
+    'PHONE_NUMBER': 'Phone Number',
+    'REFRESH': 'Refresh'
 };

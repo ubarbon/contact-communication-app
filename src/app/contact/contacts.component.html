@@ -1,0 +1,41 @@
+<app-loading></app-loading>
+
+<div class="btn-toolbar">
+    <div class="mr-5">
+        <button class="btn btn-info text-white" [disabled]="isLoading" (click)="onRefreshBtnClick()">
+            <i *ngIf="isLoading" class="fa fa-refresh fa-spin"></i>
+            {{'REFRESH' | translate}}</button>
+    </div>
+</div>
+<div *ngIf="contactsResponse">
+    <table *ngIf="!contactsResponse.totalRecords" class="table">
+        <thead>
+        <tr>
+            <th scope="col">{{'NAME' |translate}}</th>
+            <th scope="col">{{'PHONE_NUMBER' |translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="2">{{'CONTACTS_NO_FOUND' |translate}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table *ngIf="contactsResponse.totalRecords" class="table">
+        <thead>
+        <tr>
+            <th scope="col">{{'NAME' |translate}}</th>
+            <th scope="col">{{'PHONE_NUMBER' |translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let contact of contactsResponse.contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.phoneNumber}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-message></app-message>
